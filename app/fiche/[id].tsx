@@ -1,8 +1,10 @@
 import {StyleSheet, Text, View} from "react-native";
+import {useLocalSearchParams} from "expo-router";
 
 export default function Fiche() {
+    const params = useLocalSearchParams()
     return <View style={styles.container}>
-        <Text></Text>
+        <Text>Fiche {params.id}</Text>
     </View>
 }
 
