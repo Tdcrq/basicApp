@@ -1,16 +1,23 @@
-import { StyleSheet, Text, View } from "react-native";
+import {StyleSheet, View} from "react-native";
+import {SafeAreaView} from "react-native-safe-area-context";
+import {ThemedText} from "@/components/ThemedText";
 import {Link} from "expo-router";
 
 export default function Index() {
   return (
-    <View style={styles.container}>
-        <Text>Edit app/index.tsx to edit this screen.</Text>
-        <Link href="/about">A propos</Link>
-        <Link href={{pathname: '/fiche/[id]', params: {id: 1}}}>Fiche 1</Link>
-    </View>
+      <SafeAreaView>
+          <ThemedText variant={"headline"}>Home</ThemedText>
+          <ThemedText variant={"subtitle1"}>this is the home page</ThemedText>
+          <Link href={"/about"} style={styles.links}>
+              <ThemedText variant={"body2"}>About page</ThemedText>
+          </Link>
+          <Link href={{pathname: '/fiche/[id]', params: {id: 1}}} style={styles.links}>
+              <ThemedText variant={"body2"}>Fiche 01</ThemedText>
+          </Link>
+      </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-    container: {backgroundColor: '#99adf8', flex: 1, padding: 24, gap: 5}
+    links: {backgroundColor: "#7037FF"}
 })

@@ -1,16 +1,17 @@
 import {Text, View} from "react-native";
 import {Link} from "expo-router";
 import {HeaderTitle} from "@react-navigation/elements";
+import {SafeAreaView} from "react-native-safe-area-context";
 
 export default function About() {
     return (
-        <View>
+        <SafeAreaView>
             <Text>PAGE ABOUT</Text>
             <View>
-                <Link href="/">
+                <Link href={{pathname: "/"}}>
                     <HeaderTitle>Index</HeaderTitle>
                 </Link>
             </View>
-        </View>
+        </SafeAreaView>
     )
 }
